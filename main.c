@@ -1,14 +1,25 @@
 #include <stdio.h>
 
-#include "vector.h"
+#include "genvec.h"
 
-int main() {
-    vector *v = vector_create(sizeof(int));
-    for (int i = 0; i < 100; i++) {
-        vector_push(v, &i);
-        printf("%d %d\n", v->capacity, v->size);
+int main(int argc, char **argv) {
+    int *vec_test = vector_create(int, 2);
+    printf("vector is empty: %s\n", vector_empty(vec_test) ? "true" : "false");
+
+    printf("size: %lu\n", vector_size(vec_test));
+    printf("capacity: %lu\n", vector_capacity(vec_test));
+
+    for (int i = 0; i < 10; i++) {
+        vector_push_back(vec_test, i);
     }
-    for (int i = 0; i < 100; i++) {
-        printf("%d ", ((int*)v->data)[i]);
-    }
+    
+    printf("vector is empty: %s\n", vector_empty(vec_test) ? "true" : "false");
+
+    printf("size: %lu\n", vector_size(vec_test));
+    printf("capacity: %lu\n", vector_capacity(vec_test));
+
+    return 0;
 }
+
+
+
