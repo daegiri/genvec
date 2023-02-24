@@ -26,18 +26,6 @@
 #include <stdlib.h>
 #include <stddef.h>
 
-/**
- * 
- * How it works internally:
- *
- *            returned pointer ───────┐
- *                                    v
- * ┌────────┬──────────┬──────────────┬───┬───┬───┬─────┬───┐
- * │  size  │ capacity | element_size | 1 | 2 | 3 | ... | i │
- * └────────┴──────────┴──────────────┴───┴───┴───┴─────┴───┘
- * 
- */
-
 static inline size_t vector_size(void *ptr) {
     if (!ptr) return 0;
 

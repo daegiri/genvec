@@ -5,11 +5,10 @@ A single-header C library that provides a generic vector. To use it, just copy a
 ## Memory representation
 
 ```
-┌────────┬──────────┬──────────────┬───┬───┬───┬─────┬───┐
-│  size  │ capacity | element_size | 1 | 2 | 3 | ... | i │
-└────────┴──────────┴──────────────┴───┴───┴───┴─────┴───┘
+            returned pointer ----+
+                                 |
+                                 v
++------+----------+--------------+---+---+---+-----+---+
+| size | capacity | element_size | 1 | 2 | 3 | ... | n |
++------+----------+--------------+---+---+---+-----+---+
 ```
-
-## Functions
-
-Coming soon...
