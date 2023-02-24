@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "genvec.h"
 
@@ -17,6 +18,8 @@ int main(int argc, char **argv) {
 
     printf("size: %lu\n", vector_size(vec_test));
     printf("capacity: %lu\n", vector_capacity(vec_test));
+
+    vector_destroy(vec_test);
 
     return 0;
 }

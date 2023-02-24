@@ -77,7 +77,7 @@ static inline void *__v_alloc(void *ptr, size_t new_capacity, size_t element_siz
 
 #define vector_create(type, capacity) ((type *)__v_alloc(NULL, capacity, sizeof(type)))
 
-#define vector_destroy(ptr) free(_vector_genesis(ptr))
+#define vector_destroy(ptr) free(__vector_genesis(ptr))
 
 #define vector_push_back(ptr, element)                                                  \
     do {                                                                                \
